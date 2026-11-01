@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Metaverse Club | University of Mohamed Khider Biskra</title>
+<meta name="description" content="Metaverse Club: a scientific and technological student club at the University of Mohamed Khider Biskra. VR, AR, AI, 3D design and future technologies.">
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#1f0b3d;--bg2:#2c1257;--card:#3a1b6e;--line:#5b3a99;--txt:#f4eefc;--mut:#c9b8e6;--g1:#f7b267;--g2:#e03fe0;--grad:linear-gradient(135deg,var(--g1),var(--g2))}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{font-family:Poppins,system-ui,sans-serif;background:var(--bg);color:var(--txt);line-height:1.7;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:auto;padding:0 22px}
+section{padding:84px 0}
+.alt{background:var(--bg2)}
+h1,h2,h3{line-height:1.2}
+h2{font-size:clamp(1.7rem,4vw,2.4rem);font-weight:700;margin-bottom:12px}
+h2 span,.hl{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{color:var(--mut);max-width:680px;margin-bottom:38px}
+.tag{display:inline-block;padding:4px 16px;border-radius:99px;background:var(--grad);color:#2a0d4f;font-size:.75rem;font-weight:700;letter-spacing:.08em;margin-bottom:14px}
+.btn{display:inline-block;padding:12px 28px;border-radius:99px;background:var(--grad);color:#2a0d4f;font-weight:700;border:0;cursor:pointer;font:inherit;font-weight:700;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(224,63,224,.4)}
+.btn.out{background:none;color:var(--txt);border:2px solid var(--g1)}
+.todo{outline:2px dashed #ffd23f;outline-offset:3px;border-radius:4px}
+.grid{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:28px;transition:transform .25s,border-color .25s}
+.card:hover{transform:translateY(-6px);border-color:var(--g1)}
+.card .ic{font-size:2rem;margin-bottom:10px}
+.card h3{font-size:1.15rem;margin-bottom:8px}
+.card p,.card li{color:var(--mut);font-size:.93rem}
+.card ul{padding-left:18px}
+/* nav */
+header{position:fixed;inset:0 0 auto;z-index:50;background:rgba(31,11,61,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.15rem;letter-spacing:.04em}
+.logo img{width:40px;height:40px;display:block}
+.hero-logo{width:clamp(110px,20vw,150px);height:auto;margin:0 auto 18px;display:block;position:relative;filter:drop-shadow(0 0 28px rgba(224,63,224,.5))}
+.wm{height:30px;width:auto;display:block;margin:0 auto 12px;opacity:.9}
+nav ul{display:flex;gap:26px;list-style:none;font-size:.9rem;font-weight:500}
+nav ul a:hover{color:var(--g1)}
+.burger{display:none;background:none;border:0;color:var(--txt);font-size:1.7rem;cursor:pointer}
+/* hero */
+.hero{min-height:100vh;display:grid;place-items:center;text-align:center;padding-top:110px;position:relative;overflow:hidden}
+.ring{position:absolute;width:min(640px,92vw);aspect-ratio:1;border-radius:50%;border:26px solid transparent;background:var(--grad) border-box;-webkit-mask:linear-gradient(#000 0 0) padding-box exclude,linear-gradient(#000 0 0);mask:linear-gradient(#000 0 0) padding-box exclude,linear-gradient(#000 0 0);opacity:.5;animation:spin 30s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hero h1{font-size:clamp(2.6rem,9vw,5.6rem);font-weight:800;letter-spacing:.03em;position:relative}
+.hero p{max-width:620px;margin:18px auto 30px;color:var(--mut);position:relative}
+.hero .btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative}
+/* about / split */
+.split{display:grid;gap:40px;grid-template-columns:1fr 1fr;align-items:center}
+.orb{aspect-ratio:1;max-width:380px;margin:auto;border-radius:50%;background:radial-gradient(circle at 30% 30%,var(--g1),var(--g2) 60%,#5a1b9a);display:grid;place-items:center;font-size:5rem;box-shadow:0 0 80px rgba(224,63,224,.35);animation:float 6s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-16px)}}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 24px}
+.chips span{padding:6px 16px;border-radius:99px;border:1px solid var(--line);background:var(--card);font-size:.85rem}
+/* timeline */
+.tl{border-left:3px solid var(--line);padding-left:26px;display:grid;gap:26px}
+.tl div{position:relative}
+.tl div:before{content:"";position:absolute;left:-36px;top:7px;width:15px;height:15px;border-radius:50%;background:var(--grad)}
+.tl time{color:var(--g1);font-weight:600;font-size:.85rem}
+.tl p{color:var(--mut);font-size:.93rem}
+/* faq */
+details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 22px;margin-bottom:12px}
+summary{cursor:pointer;font-weight:600}
+details p{color:var(--mut);margin-top:10px;font-size:.93rem}
+/* form */
+form{display:grid;gap:14px}
+input,select,textarea{width:100%;padding:13px 16px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--txt);font:inherit}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--g1)}
+.contact{display:grid;gap:34px;grid-template-columns:1fr 1.2fr}
+.info p{margin-bottom:14px;color:var(--mut)}
+.info b{color:var(--txt);display:block}
+footer{padding:30px 0;text-align:center;color:var(--mut);font-size:.85rem;border-top:1px solid var(--line)}
+.rv{opacity:0;transform:translateY(28px);transition:opacity .7s,transform .7s}
+.rv.on{opacity:1;transform:none}
+@media(max-width:820px){
+ .split,.contact{grid-template-columns:1fr}
+ .burger{display:block}
+ nav ul{position:absolute;top:68px;left:0;right:0;flex-direction:column;gap:0;background:var(--bg);border-bottom:1px solid var(--line);display:none}
+ nav ul.open{display:flex}
+ nav ul li a{display:block;padding:14px 22px}
+ section{padding:64px 0}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<!--
+  HOW TO EDIT: every spot highlighted with a yellow dashed border (class="todo") is info I did not have.
+  Search for "ADD:" in this file to find them all, then remove class="todo" when done.
+-->
+<header>
+ <div class="wrap">
+  <nav>
+   <a href="#home" class="logo"><img src="logo.png" alt="" width="40" height="40">METAVERSE CLUB</a>
+   <button class="burger" aria-label="Menu" onclick="document.getElementById('menu').classList.toggle('open')">&#9776;</button>
+   <ul id="menu">
+    <li><a href="#about">About</a></li>
+    <li><a href="#metaverse">Metaverse</a></li>
+    <li><a href="#activities">What we do</a></li>
+    <li><a href="#events">Events</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#join" class="hl" style="font-weight:700">Join us</a></li>
+   </ul>
+  </nav>
+ </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+ <div class="ring"></div>
+ <div class="wrap">
+  <img class="hero-logo" src="logo.png" alt="Metaverse Club logo" width="150" height="150">
+  <span class="tag">STUDENT TECH CLUB</span>
+  <h1>METAVERSE <span>CLUB</span></h1>
+  <p>Learn, build and experiment with the technologies that shape the digital future: VR, AR, AI and 3D worlds. University of Mohamed Khider, Biskra.</p>
+  <div class="btns"><a class="btn" href="#join">Become a member</a><a class="btn out" href="#about">Discover the club</a></div>
+  </div>
+ </div>
+</section>
+
+<section id="about" class="alt">
+ <div class="wrap split">
+  <div class="rv">
+   <h2>Who <span>are we?</span></h2>
+   <p class="lead" style="margin-bottom:0">The Metaverse Club is a scientific and creative club at our university. We bring together students who are passionate about creativity, innovation and modern digital technologies.</p>
+   <div class="chips"><span>Virtual Reality</span><span>Augmented Reality</span><span>Artificial Intelligence</span><span>3D design &amp; world-building</span><span>Digital innovation</span></div>
+   <p style="color:var(--mut)"><b style="color:var(--g1)">Our mission:</b> create a space where students can learn, build and experiment with technologies that form the future of the digital world.</p>
+   <p style="color:var(--mut);margin-top:10px"><b style="color:var(--g1)">Our vision:</b> become the leading scientific club in the university, bringing future technology to students and helping them develop real skills for real careers.</p>
+  </div>
+  <div class="orb rv" aria-hidden="true">&#129405;</div>
+ </div>
+</section>
+
+<section id="metaverse">
+ <div class="wrap">
+  <h2 class="rv">What is the <span>Metaverse?</span></h2>
+  <p class="lead rv">A vast digital world that combines Virtual Reality and Augmented Reality, letting people live and interact inside a three-dimensional environment that resembles real life.</p>
+  <div class="grid">
+   <div class="card rv"><div class="ic">&#129405;</div><h3>Virtual Reality (VR)</h3><p>You enter a fully virtual world with a headset like Oculus or HTC Vive, completely separated from the real one.</p><p style="margin-top:10px"><b>Examples:</b> Half-Life: Alyx, Beat Saber, Ready Player One.</p></div>
+   <div class="card rv"><div class="ic">&#128241;</div><h3>Augmented Reality (AR)</h3><p>Digital elements (3D images, text, characters) are added on top of the real world, seen through a phone camera or special glasses.</p><p style="margin-top:10px"><b>Examples:</b> Pok&eacute;mon GO, Snapchat filters, Iron Man&rsquo;s helmet HUD.</p></div>
+   <div class="card rv"><div class="ic">&#127760;</div><h3>Where they meet</h3><p>The metaverse uses VR to enter a virtual world and AR to blend it with real life. People can play, study, work and communicate using both.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="activities" class="alt">
+ <div class="wrap">
+  <h2 class="rv">What <span>we do</span></h2>
+  <p class="lead rv">From first steps to real projects, there is a place for every level.</p>
+  <div class="grid">
+   <div class="card rv"><div class="ic">&#127891;</div><h3>Workshops &amp; Training</h3><ul><li>Learning sessions</li><li>Software tutorials</li><li>Training for beginners and advanced members</li></ul></div>
+   <div class="card rv"><div class="ic">&#128736;&#65039;</div><h3>Real Projects</h3><ul><li>VR/AR experiences</li><li>Simple 3D games</li><li>Virtual environments</li><li>Interactive simulations</li><li>AI-powered tools</li></ul></div>
+   <div class="card rv"><div class="ic">&#127942;</div><h3>Competitions &amp; Events</h3><ul><li>University competitions</li><li>Tech fairs</li><li>Innovation challenges</li><li>Our own events to showcase projects</li></ul></div>
+   <div class="card rv"><div class="ic">&#129309;</div><h3>Teamwork &amp; Creativity</h3><ul><li>Working in teams</li><li>Sharing ideas</li><li>Helping new members</li><li>Building a strong tech community</li></ul></div>
+  </div>
+ </div>
+</section>
+
+<section id="events">
+ <div class="wrap split" style="align-items:start">
+  <div class="rv">
+   <h2>Events &amp; <span>timeline</span></h2>
+   <p class="lead">Workshops, competitions and meetups. Follow our social pages for the latest announcements.</p>
+   <a class="btn out" href="#join">Get notified</a>
+  </div>
+  <div class="tl rv">
+   <div><time>3 November 2026</time><h3>Introduction meeting</h3><p>We present the club and our presentation, then answer all your questions. <span class="todo">ADD: time and place.</span></p></div>
+   <div><time>Coming soon</time><h3>Workshops &amp; training sessions</h3><p>Dates will be announced on our Instagram and Facebook pages.</p></div>
+   <div><time>Coming soon</time><h3>Competitions &amp; events</h3><p>Stay tuned, more is on the way.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="faq" class="alt">
+ <div class="wrap" style="max-width:780px">
+  <h2 class="rv">Frequently asked <span>questions</span></h2>
+  <p class="lead rv">Quick answers for new students.</p>
+  <details class="rv"><summary>Do I need experience to join?</summary><p>No. We train beginners and advanced members, so you can start from zero and learn with the group.</p></details>
+  <details class="rv"><summary>Who can become a member?</summary><p>Any student of the university who is curious about VR, AR, AI, 3D design or digital innovation.</p></details>
+  <details class="rv"><summary>Do I need a VR headset?</summary><p>No. You can build and test many projects on a computer or phone. <span class="todo">ADD: tell members if the club has headsets to share.</span></p></details>
+  <details class="rv"><summary>Is membership free?</summary><p class="todo">ADD: membership fee or &ldquo;Membership is free.&rdquo;</p></details>
+  <details class="rv"><summary>Where and when do you meet?</summary><p class="todo">ADD: place (building/room) and schedule.</p></details>
+ </div>
+</section>
+
+<section id="join">
+ <div class="wrap contact">
+  <div class="info rv">
+   <h2>Join <span>the club</span></h2>
+   <p class="lead">Fill the form and we will contact you. Or reach us directly:</p>
+   <p><b>Email</b><a href="mailto:metaverse.club7@gmail.com">metaverse.club7@gmail.com</a></p>
+   <p><b>Instagram</b><a href="https://www.instagram.com/metaverse_club07" target="_blank" rel="noopener">@metaverse_club07</a></p>
+   <p><b>Facebook</b><a href="https://www.facebook.com/profile.php?id=61587613701671" target="_blank" rel="noopener">Metaverse Club on Facebook</a></p>
+   <p><b>Location</b>University Mohamed Khider, Biskra</p>
+  </div>
+  <form class="card rv" id="f">
+   <input name="name" placeholder="Full name" required>
+   <input name="email" type="email" placeholder="Email" required>
+   <input name="field" placeholder="Field / year of study" required>
+   <textarea name="msg" rows="4" placeholder="Why do you want to join?"></textarea>
+   <button class="btn" type="submit">Send application</button>
+   <small style="color:var(--mut)">This opens your email app with the message ready to send. For a real form backend, connect Formspree or Google Forms (see notes).</small>
+  </form>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="wrap"><img class="wm" src="wordmark.png" alt="Metaverse" width="138" height="30">&copy; <span id="y"></span> Metaverse Club &middot; University of Mohamed Khider, Biskra. All rights reserved.</div>
+</footer>
+
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+document.querySelectorAll('#menu a').forEach(a=>a.onclick=()=>document.getElementById('menu').classList.remove('open'));
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+document.getElementById('f').addEventListener('submit',function(e){
+ e.preventDefault();var d=new FormData(e.target);
+ var body='Name: '+d.get('name')+'\nEmail: '+d.get('email')+'\nField/Year: '+d.get('field')+'\n\n'+d.get('msg');
+ location.href='mailto:metaverse.club7@gmail.com?subject='+encodeURIComponent('Membership application')+'&body='+encodeURIComponent(body);
+});
+</script>
+</body>
+</html>
